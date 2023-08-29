@@ -16,14 +16,3 @@ services:
     x-tinkr:
       cpu: 512
       memory: 512
-      load_balancer:
-        tenancy: shared
-        type: webserver
-        healthcheck:
-          timeout: 10
-          healthy-threshold: 3
-          unhealthy-threshold: 5
-          port: 8888
-          path: /
-          interval: 120
-          success_code: "301-302"
