@@ -3,6 +3,8 @@ services:
   cs:
     image: cs16ds/server:latest
     container_name: cs
+    volumes:
+      - dummy:/dummy/
     ports:
       - 26900:26900/udp
       - 27020:27020/udp
