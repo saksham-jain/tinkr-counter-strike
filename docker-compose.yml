@@ -6,13 +6,16 @@ services:
     volumes:
       - dummy:/dummy/
     ports:
+      - 27015:27015
+      - 27015:27015/udp
       - 26900:26900/udp
       - 27020:27020/udp
-      - 27015:27015/udp
-      - 27015:27015
     environment:
       - ADMIN_STEAM=0:1:1234566
     restart: always
     x-tinkr:
       cpu: 512
       memory: 512
+      load_balancer:
+        tenancy: dedicated
+        type: network
